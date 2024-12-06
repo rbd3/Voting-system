@@ -40,13 +40,11 @@ This is a decentralized voting system implemented in Solidity that allows partic
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
   <ul>
     <li><a href="https://soliditylang.org/">Solidity</a> - The smart contract programming language used to build the voting system.</li>
     <li><a href="https://ethereum.org/en/">Ethereum</a> - The blockchain platform on which the smart contract is deployed.</li>
     <li><a href="https://remix.ethereum.org/">Remix IDE</a> - The integrated development environment used for writing, testing, and deploying the Solidity smart contract.</li>
   </ul>
-</details>
 
 ### Key Features <a name="key-features"></a>
 
