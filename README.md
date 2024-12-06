@@ -72,6 +72,7 @@ In order to run this project, you need to install the following tools:
 
 Install the required dependencies using:
  - git clone git@github.com:rbd3/Voting-system.git
+ - cd Voting-system
  - npm install
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -110,7 +111,7 @@ Give a star⭐️ or a thumbs up 👍 if you like this project! You can visit my
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- My family who supported me
+- My family who supported me.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
