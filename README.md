@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="bookadoc-logo.png" alt="logo" width="140"  height="auto" />
+  <img src="public/blockchain-logo.webp" alt="logo" width="140"  height="auto" />
   <br/>
 
   <h3><b>Voting System Smart Contract</b></h3>
