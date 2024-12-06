@@ -117,4 +117,25 @@ contract Ballot {
         }
     }
 
+    uint[] public tiedProposals;
+
+    function calculateWinningProposals() public {
+        uint winningVoteCount = 0;
+        delete tiedProposals; // Clear existing ties
+
+        for (uint i = 0; i < proposals.length; i++) {
+            if (proposals[i].voteCount > winningVoteCount) {
+                winningVoteCount = proposals[i].voteCount;
+                tiedProposals = [i]; // Reset to a new array with the current proposal
+            } else if (proposals[i].voteCount == winningVoteCount) {
+                tiedProposals.push(i); // Add to the existing array
+            }
+        }
+    }
+
+    function getWinningProposals() public view returns (uint[] memory) {
+        return tiedProposals;
+    }
+
+
 }
