@@ -87,4 +87,34 @@ contract Ballot {
     function winnerName() external view returns(bytes32 winnerName_){
         winnerName_ = proposals[winningProposal()].name;
     }
+
+    //IMPROVEMENT
+
+    //Asign all voter at once
+    function giveRightToVoteForAll(address[] memory voterAdress) external {
+        require(msg.sender == chairperson,
+        "only chairperson can give right to vote");
+
+        for (uint i = 0; i < voterAdress.length; i++){
+            address voter = voterAdress[i];
+
+            require(!voters[voter].voted, 
+        "Voter already voted");
+        require(voters[voter].weight == 0);
+            voters[voter].weight = 1;
+        }
+        
+    }
+
+
+    function winningProposalTies() public view returns (uint[] memory winningProposal_){
+        uint winningVoteCount = 0;
+        for(uint i = 0; i < proposals.length; i++){
+            if(proposals[i].voteCount > winningVoteCount){
+                winningVoteCount = proposals[i].voteCount;
+                winningProposal_ = i;
+            }
+        }
+    }
+
 }

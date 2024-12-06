@@ -58,6 +58,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address[]",
+						"name": "voterAdress",
+						"type": "address[]"
+					}
+				],
+				"name": "giveRightToVoteForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
@@ -181,11 +194,11 @@
 	},
 	"sources": {
 		"contracts/voting.sol": {
-			"keccak256": "0x4c54e4a306750eb09bff30c5bde743ec57f7f4cb1f988ba49a2ba33eb22265a1",
+			"keccak256": "0x492f87ed127702234c42a2bc1a6b178e76b401c5d34642fffdaa7759cfe15045",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6a8cd3098f1876ee103ecb554d1e7c7629657cd084aa3df86d36c5351d4d1b54",
-				"dweb:/ipfs/QmR5Y9mPZsJkvCtS9RQaZVfu4Y233xhCRJkVGHkRYAFzAf"
+				"bzz-raw://904626b5e4daaf86883ee066843c04bd6d102145b86c0ceac390a4c266e09675",
+				"dweb:/ipfs/QmbxzRQ5PxEPtounvnSQULvcXsNcokCHrHjfc7CSjsYFMd"
 			]
 		}
 	},
