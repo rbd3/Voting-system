@@ -34,14 +34,14 @@ contract Ballot {
         "only chairperson can give right to vote");
         require(!voters[voter].voted, 
         "Voter already voted");
-        require(voters[voter].weigth == 0);
-        voters[voter].weigth = 1;
+        require(voters[voter].weight == 0);
+        voters[voter].weight = 1;
     }
 
     function delegate(address to) external {
-        Voter storage sender = msg.sender;
+        Voter storage sender = voters[msg.sender];
         require(sender.weight != 0, "you have no rigth to vote");
-        require(sender.voted, "you already voted");
+        require(!sender.voted, "you already voted");
         require(to == msg.sender, "self-delegation isn't allowed");
 
         while (voters[to].delegate != address(0)) {
@@ -65,9 +65,9 @@ contract Ballot {
     }
 
     function vote(uint256 proposal) external {
-        Voter storage sender = msg.sender;
+        Voter storage sender = voters[msg.sender];
         require(sender.weight != 0, "has no right to vote");
-        require(sender.voted, "already voted");
+        require(!sender.voted, "already voted");
         sender.voted = true;
         sender.vote = proposal;
 
@@ -76,7 +76,7 @@ contract Ballot {
 
     function winningProposal() public view returns (uint winningProposal_){
         uint winningVoteCount = 0;
-        for(uint i = 0; p < proposals.length; i++){
+        for(uint i = 0; i < proposals.length; i++){
             if(proposals[i].voteCount > winningVoteCount){
                 winningVoteCount = proposals[i].voteCount;
                 winningProposal_ = i;
